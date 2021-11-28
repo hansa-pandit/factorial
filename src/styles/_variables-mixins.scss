@@ -1,0 +1,164 @@
+/**
+ * @file
+ * Global variables and mixins.
+ */
+
+@import '../../node_modules/sass-rem/rem';
+@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+
+/**
+ * Variable declaration
+ */
+
+//Color variables
+$white: #fff;
+$black: #000;
+$smoke-grey: #efefef;
+$iron-grey: #48494b;
+$shadow-grey: #e7e7e7;
+$teal: #0b8485;
+
+//font variables
+$regular: 400;
+$semiBold: 600;
+$bold: 700;
+
+//Breakpoints
+$mobile: screen (max-width 767px);
+$tablet: screen (min-width 768px);
+$belowDesktop: screen (max-width 1024px);
+$desktopScreens: screen (min-width 1025px);
+$wideScreens: screen (min-width 1280px);
+
+//Utility variables
+$transition: 0.4s ease;
+$box-shadow: 3px 3px 4px $shadow-grey;
+
+/**
+ * Mixins and placeholder styles.
+ */
+
+//Mixins
+@mixin container {
+  width: 100%;
+  max-width: rem(1200px);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 rem(20px);
+  box-sizing: border-box;
+}
+
+@mixin flex__container {
+  @include breakpoint($tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 rem(-10px);
+  }
+}
+
+@mixin two-up__item {
+  margin-bottom: rem(20px);
+
+  @include breakpoint($tablet) {
+    max-width: calc(50% - 20px);
+    flex: 0 1 calc(50% - 20px);
+    margin: 0 rem(10px) rem(20px);
+  }
+}
+
+//Placeholders
+%p-text {
+  margin: 0 0 rem(20px) 0;
+  font-size: rem(16px);
+  line-height: 1.5;
+}
+
+%heading {
+  margin: rem(20px 0 10px);
+  line-height: 1.2;
+}
+
+%h1 {
+  @extend %heading;
+  font-size: rem(32px);
+
+  @include breakpoint($tablet) {
+    font-size: rem(42px);
+  }
+}
+
+%h2 {
+  @extend %heading;
+  font-size: rem(28px);
+
+  @include breakpoint($tablet) {
+    font-size: rem(34px);
+  }
+}
+
+%h3 {
+  @extend %heading;
+  font-size: rem(22px);
+
+  @include breakpoint($tablet) {
+    font-size: rem(28px);
+  }
+}
+
+%h4 {
+  @extend %heading;
+  font-size: rem(20px);
+}
+
+%button {
+  cursor: pointer;
+  padding: rem(10px 15px);
+  font-size: rem(18px);
+  font-weight: $semiBold;
+}
+
+%button--primary {
+  @extend %button;
+  background-color: $teal;
+  color: $white;
+  min-width: rem(150px);
+  border-radius: 5px;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    background-color: $black;
+    transition: $transition;
+    text-decoration: none;
+  }
+}
+
+%blockquote {
+  background-color: $smoke-grey;
+  padding: rem(20px);
+  margin: rem(25px 0);
+  font-size: rem(18px);
+  line-height: 1.5;
+  border-radius: rem(5px);
+  border-left: 5px solid $teal;
+  font-style: italic;
+
+  @include breakpoint($tablet) {
+    margin: rem(25px);
+    font-size: rem(20px);
+  }
+}
+
+%vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+%horizontal-center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+}

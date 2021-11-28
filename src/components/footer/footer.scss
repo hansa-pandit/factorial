@@ -1,0 +1,16 @@
+/**
+ * @file
+ * Footer specific styles.
+ */
+
+.site-footer {
+  padding: rem(20px 0);
+  background-color: $teal;
+  text-align: center;
+  color: $white;
+}
+
+.copyright-text {
+  font-size: rem(18px);
+  margin: 0;
+}

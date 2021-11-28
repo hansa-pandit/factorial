@@ -1,0 +1,60 @@
+/**
+ * @file
+ * Blog detail styles.
+ */
+
+.blog-detail {
+  padding: rem(20px);
+  background-color: $white;
+  box-shadow: $box-shadow;
+
+  @include breakpoint($tablet) {
+    padding: rem(30px);
+  }
+
+  &__image {
+    margin-bottom: rem(15px);
+    border-radius: rem(5px 5px 0 0);
+    overflow: hidden;
+
+    @include breakpoint($tablet) {
+      margin-bottom: rem(30px);
+
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: rem(20px);
+    text-align: center;
+  }
+
+  &__content {
+    @include breakpoint($desktopScreens) {
+      padding: rem(0 50px);
+    }
+  }
+
+  .author {
+    max-width: rem(650px);
+    margin: rem(50px) auto 0;
+    padding-top: rem(10px);
+    text-align: center;
+    border-top: 2px solid $teal;
+
+    &__image {
+      margin-bottom: rem(5px);
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &__intro {
+      font-style: italic;
+    }
+
+    &__section-title {
+      color: $teal;
+      margin-bottom: rem(40px);
+    }
+  }
+}

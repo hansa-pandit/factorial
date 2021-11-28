@@ -1,0 +1,42 @@
+/**
+ * @file
+ * Blog teaser styles.
+ */
+
+.blog-teaser {
+  padding: rem(20px 20px 30px 20px);
+  background-color: $white;
+  border-radius: rem(5px);
+  box-shadow: $box-shadow;
+
+  @include two-up__item;
+
+  &__wrapper {
+    @include flex__container;
+    justify-content: center;
+  }
+
+  &__image {
+    margin: 0 auto rem(20px);
+    border-radius: 5px 5px 0 0;
+    line-height: 0.5;
+    overflow: hidden;
+  }
+
+  &__content {
+    text-align: center;
+
+    @include breakpoint($tablet) {
+      padding: rem(0 20px 20px);
+      text-align: left;
+    }
+  }
+
+  &__text--title {
+    font-weight: $semiBold;
+
+    @include breakpoint($belowDesktop) {
+      font-size: rem(28px);
+    }
+  }
+}

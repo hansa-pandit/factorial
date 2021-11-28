@@ -1,0 +1,139 @@
+/**
+ * @file
+ * Base styles.
+ */
+
+* {
+  box-sizing: border-box
+}
+
+::selection {
+  background-color: $teal;
+  color: $white;
+}
+
+*:focus,
+button:focus {
+  outline: 1px dotted $black;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: rem(16px);
+  color: $iron-grey;
+  line-height: 1.5;
+  background-color: $smoke-grey;
+  font-weight: $regular;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+  transition: $transition;
+  color: $teal;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    transition: $transition;
+    text-decoration: underline;
+  }
+}
+
+p {
+  @extend %p-text;
+}
+
+h1 {
+  @extend %h1;
+}
+
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+h4 {
+  @extend %h4;
+}
+
+button {
+  @extend %button;
+}
+
+.button--primary {
+  @extend %button--primary;
+}
+
+ul,
+ol {
+  li {
+    margin-bottom: rem(5px);
+  }
+}
+
+strong {
+  font-weight: bold;
+}
+
+blockquote {
+  @extend %blockquote;
+}
+
+.container {
+  @include container;
+}
+
+.main-content {
+  padding: rem(20px 0);
+
+  @include breakpoint($desktopScreens) {
+    padding: rem(50px 0);
+  }
+}
+
+.page-title {
+  text-align: center;
+}
+
+.intro-text {
+  text-align: center;
+
+  @include breakpoint($desktopScreens) {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.page__title-intro {
+  position: relative;
+  margin-bottom: rem(70px);
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: rem(-20px);
+    margin: 0 auto;
+    width: rem(150px);
+    height: rem(2px);
+    background: #0b8485;
+    border-radius: 50%;
+  }
+}
