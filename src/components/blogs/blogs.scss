@@ -24,11 +24,8 @@
   }
 
   &__content {
-    text-align: center;
-
     @include breakpoint($tablet) {
       padding: rem(0 20px 20px);
-      text-align: left;
     }
   }
 
